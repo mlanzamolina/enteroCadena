@@ -1,24 +1,24 @@
+#ifndef CADENA_H
+#define CADENA_H
 #include <iostream>
-class Cadena
-{
-    friend std::ostream& operator<<(std::ostream&, const Cadena&);
-    private:
-    char * cadena;
-    int size;
-    
+#include "Entero.h"
+using namespace std;
 
-    public:
-    Cadena(char*,int size);
-    Cadena(void);
+class Cadena{
+
+friend Cadena operator+(const Cadena&, const Cadena&);
+friend Cadena operator+(const Cadena&, Entero&);
+friend std::ostream& operator<<(std::ostream&, const Cadena&);
+
+private:
+    char *cadena;
+
+public:
+    Cadena(const char*);
+    void setCadena(char*);
+    Cadena();    
     ~Cadena();
-    //sobrecargar operador + y <<  
-    Cadena Cadena::operator+(const Cadena& other);
-   
-
-
-
-
-    
-
-
 };
+
+
+#endif

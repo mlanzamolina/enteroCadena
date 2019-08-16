@@ -1,11 +1,15 @@
 #include "Entero.h"
-std::istream& operator>>(std::istream& in ,Entero &ent)
-{
-    in>>" ";
-    in>>ent;
-    
+
+Entero::Entero():numero(0){  }
+
+int Entero::getNumero(){
+    return this->numero;
 }
-Cadena Cadena::operator+(const Entero& ent)
-{
-    cadena*=ent;
+
+
+
+std::istream& operator>>(std::istream& in, Entero& e){
+    in>>e.numero;
+
+    return in;
 }

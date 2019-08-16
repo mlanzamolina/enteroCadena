@@ -1,18 +1,21 @@
+#ifndef ENTERO_H
+#define ENTERO_H
 #include <iostream>
-#include "Cadena.h"
-class Entero
-{
-    friend std::istream & operator>>(std::istream&,Entero &);
-    private:
-      int valor;
+
+class Entero{
+    
+friend std::istream& operator>>(std::istream&, Entero&);
 
 
-    public:
-       Entero(void);
-        Cadena operator +(const Entero& other);
-        Entero():valor(0){}
-        //~Entero
-
-
-
+ private: 
+    
+int numero;
+public:
+    Entero();
+    int getNumero();
+    
+    
 };
+
+
+#endif
